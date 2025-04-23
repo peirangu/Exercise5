@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Studio Ghibli Carousel</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="mask"></div>
+  <section>
+    <main>
+        <div class="carousel" id="carousel">
+            <div class="slides" id="slides">
+                <div class="slide card">
+                      <figure>
+                        <img class="poster" src="./assets/arrietty.webp" alt="Movie 1" />
+                        <video class="trailer" src="./assets/arrietty-trailer.mp4" autoplay loop muted controls></video> 
+                      </figure>
+                        <div class="caption">
+                            <h2>Arrietty</h2>
+                            <p>A "little" girl's BlG life.</p>
+                        </div>
+                </div>
+                <div class="slide card">
+                      <figure>
+                        <img class="poster" src="./assets/howlscastle.jpg" alt="Movie 1" />
+                        <video class="trailer" src="./assets/howl-trailer.mp4" autoplay loop muted controls></video> 
+                      </figure>
+                        <div class="caption">
+                            <h2>Howl's Moving Castle</h2>
+                            <p>Family is what you make of it</p>
+                        </div>
+                </div>
+                <div class="slide card">
+                      <figure>
+                        <img class="poster" src="./assets/kiki.webp" alt="Movie 1" />
+                        <video class="trailer" src="./assets/kiki-trailer.mp4" autoplay loop muted controls></video> 
+                      </figure>
+                        <div class="caption">
+                            <h2>Kiki's Delivery Service</h2>
+                            <p>An enchanting witch grows up</p>
+                        </div>
+                </div>
+                <div class="slide card">
+                      <figure>
+                        <img class="poster" src="./assets/spiritedaway.jpg" alt="Movie 1" />
+                        <video class="trailer" src="./assets/spirited-away-trailer.mp4" autoplay loop muted controls></video> 
+                      </figure>
+                        <div class="caption">
+                            <h2>Spirited Away</h2>
+                            <p>A magical journey into the spirit world.</p>
+                        </div>
+                </div>
+                <div class="slide card">
+                      <figure>
+                        <img class="poster" src="./assets/totoro.jpg" alt="Movie 1" />
+                        <video class="trailer" src="./assets/totoro-trailer.mp4" autoplay loop muted controls></video> 
+                      </figure>
+                        <div class="caption">
+                            <h2>My Neighbor Totoro</h2>
+                            <p>Imagination. Joy. Resilience</p>
+                        </div>
+                </div>
+            </div>
+           
+            <button class="nav-button prev" id="prev">&#10094;</button>
+            <button class="nav-button next" id="next">&#10095;</button>
+        </div>
+
+        <nav class="mainNav" id="mainNav">
+           <img
+            src="./assets/menu-icon.png"
+            id="menuToggle"
+            class="menu-icon"
+            alt=""
+           />
+           <ul class="navLinks" id="navLinks">
+               <li><a href="">Vist</a></li>
+               <li><a href="">About</a></li>
+               <li><a href="">Tickets</a></li>
+               <li><a href="">FAQ</a></li>
+               <li><a href="">Contact</a></li>
+           </ul>
+        </nav>
+
+
+       <section class="shopping" id="shopping">
+            <input type="text" class="search"  id="search" placeholder="Search for Ghibli merchandise..." />
+            <div class="productContainer" id="productContainer">
+
+            </div>
+       </section>
+
+
+        <section class="registration" id="registration">
+            <form action="" id="registrationform">
+                    <div class="title">Visit us at Ghibli Park</div>
+
+                    <label for="date-of-visit">When would you like to visit us?</label>
+                    <input type="date" id="date-of-visit" name="date-of-visit" required>
+                    <span class="error" id="visitDateError"></span><br><br>
+
+                    <label for="no-of-visitors">How many are coming?</label>
+                    <select id="no-of-visitors" name="no-of-visitors">
+                        <option value="">--Select--</option>
+                        <option value="1">Just me</option>
+                        <option value="2">My friends and I</option>
+                        <option value="3-4">Some of my friends and I (3-4)</option>
+                        <option value="4 or more">May family and I (4 or more)</option>
+                    </select>
+                    <span class="error" id="visitorsError"></span><br><br>
+
+                    <label for="name">Your Full Name:</label>
+                    <input type="text" id="name" name="name" />
+                    <span class="error" id="nameError"></span><br><br>
+
+                    <label for="email">Your Email Address:</label>
+                    <input type="email" id="email" name="email">
+                    <span class="error" id="emailError"></span><br><br>
+
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" />
+                    <span class="error" id="dobError"></span><br><br>
+
+                    <label>Gender:</label>
+                    <div class="gender-options">
+                    <div class="gender-option">
+                        <input type="radio" name="gender" value="male" id="male">
+                        <label for="male">Male</label>
+                    </div>
+                    <div class="gender-option">
+                        <input type="radio" name="gender" value="female" id="female">
+                        <label for="female">Female</label>
+                    </div>
+                    </div>
+                    <span class="error" id="genderError"></span><br><br>
+                    
+                    <label for="ticket">Ticket Type:</label><br><br>
+                    <select id="ticket" name="ticket">
+                        <option value="">--Select--</option>
+                        <option value="regular">Regular</option>
+                        <option value="vip">VIP</option>
+                    </select>
+                    <span class="error" id="ticketError"></span>
+
+                    <label for="comments">Additional Comments:</label>
+                    <textarea id="comments" name="comments" rows="4" cols="40"></textarea>
+                <button type="submit" id="submitButton">Register</button>
+            </form>
+        </section>
+
+    </main>
+  </section>
+  <script src="script.js"></script>
+</body>
+
+</html>
