@@ -85,13 +85,91 @@
         </nav>
 
 
-       <section class="shopping" id="shopping">
+       <section class="shopping show" id="shopping">
+            <div class="cart" id="cart">
+                <img src="./assets/chart-image.png" alt="Shopping Cart" id="cartIcon" />
+                <div class="cart-content" id="cartContent">
+                    <p class="default">Add anything you like</p>
+                    <div>
+                      <button class="check-out" id="checkoutButton">
+                        <span class="checkout-text">Checkout</span>
+                      </button>
+                    </div>
+                </div>
+            </div>
             <input type="text" class="search"  id="search" placeholder="Search for Ghibli merchandise..." />
             <div class="productContainer" id="productContainer">
-
             </div>
        </section>
 
+
+       <section class="your-cart" id="yourCart">
+            <div class="checkoutItems" id="checkoutItems">
+                <h2>Your Cart</h2>
+                <div class="checkoutContent" id="checkoutContent"></div>
+                <button class="buy-button" id="buyButton">Proceed to Buy</button>
+            </div>
+       </section>
+
+       <section class="personal-info" id="personalInfo">
+            <h2>Confirm Your Purchase</h2>
+            <form class="personal-info-form" id="personalInfoForm">
+                    <label for="name">Name:</label>
+                    <input type="text" id="inforName" name="name" />
+                    <span class="error" id="inforNameError"></span>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="inforEmail" name="email">  
+                    <span class="error" id="inforEmailError"></span>
+
+                    <label for="address">Address</label>
+                    <textarea id="inforAddress" name="address" rows="2" cols="40"></textarea>
+                    <span class="error" id="infroAddressError"></span>
+
+                    <label for="paymentMethod">Payment Method</label>
+                    <select id="paymentMethod" name="paymentMethod">
+                        <option value="">--Select--</option>
+                        <option value="creditCard">Credit Card</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="bankTransfer">Bank Transfer</option>
+                    </select>
+                    <span class="error" id="paymentMethodError"></span>
+
+                    <label for="cardNumber">Card Number</label>
+                    <input type="text" id="cardNumber" name="cardNumber" />
+                    <span class="error" id="cardNumberError"></span>
+
+                    <label for="expiryDate">Expiry</label>
+                    <input type="month" id="expiryDate" name="expiryDate" />
+                    <span class="error" id="expiryDateError"></span>
+
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" name="cvv" />
+                    <span class="error" id="cvvError"></span>
+
+                    <button type="submit" class="inforButton" id="inforButton">
+                        Confirm Purchase
+                    </button>
+            </form>
+       </section>
+
+       <div id="myModal" class="modal">
+        <div class="modal-content">
+        <span id="closeModal" class="closeModal">&times;</span>
+        <p>Form submitted successfully!</p>
+        </div>
+      </div>
+      <div class=""></div>
+
+       <section class="confirm" id="confirm">
+        <h2>Order Confirmed!</h2>
+        <div class="confirmContent" id="confirmContent"></div>
+        <button class="back-to-shopping" id="backToShopping">Back to Shopping</button>
+      </section>
+
+       <button class="check-out-global" id="checkoutButtonGlobal">
+        <span class="checkout-text">Checkout</span>
+      </button>
 
         <section class="registration" id="registration">
             <form action="" id="registrationform">
