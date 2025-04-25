@@ -355,18 +355,19 @@ inforForm.addEventListener("submit", function (event) {
     }, 2000);
 
     console.log(personalInfo);
+    const confirmInfor = document.createElement("div");
+    confirmInfor.className = "confirm-infor";
+    confirmInfor.innerHTML = `
+              <p>Thank you,<span>  ${personalInfo.name}<span></p>
+              <P>Your order of <span>${itemNumber}</span> items totaling <span>$${total}</span> will be delivered to:</P>
+              <p>Address: ${personalInfo.address}</p>
+              <p>Expect your package in 3-4 working days.</p>
+          `;
+    confirmContent.appendChild(confirmInfor);  
+    confirm.classList.add("show");
+    infor.classList.remove("show");
   }
-  const confirmInfor = document.createElement("div");
-  confirmInfor.className = "confirm-infor";
-  confirmInfor.innerHTML = `
-            <p>Thank you,<span>  ${personalInfo.name}<span></p>
-            <P>Your order of <span>${itemNumber}</span> items totaling <span>$${total}</span> will be delivered to:</P>
-            <p>Address: ${personalInfo.address}</p>
-            <p>Expect your package in 3-4 working days.</p>
-        `;
-  confirmContent.appendChild(confirmInfor);  
-  confirm.classList.add("show");
-  infor.classList.remove("show");
+  
  
 });
 
