@@ -129,12 +129,13 @@ function displayProducts(productList) {
         `;
     productContainer.appendChild(productDiv);
     const addToCartButton = productDiv.querySelector(".add-to-cart");
-    addToCartButton.addEventListener("click", () => addToCart(product));
+    addToCartButton.addEventListener("click", () => addToCart(product.id));
   });
   
 }
 
-function addToCart(product) {
+function addToCart(product_id) {
+  const product = products.find(p => p.id === product_id);
   cartContent.innerHTML = "";
   if (cartList.length === 0) {
     product.quantity = 1;
@@ -240,18 +241,20 @@ function displayCheckout() {
     return sum + product.quantity;
   }, 0);
   console.log(total);
-  cartList.forEach((product) => {
-    const cartItem = document.createElement("div");
-    cartItem.innerHTML = `
-                <div class="check-out-item">
-                    <h3>${product.name}</h3>
-                    <p>--Price: $${product.price}</p>
-                    <p class="quantity">Quantity: ${product.quantity}</p>
-                </div>
-                <span class="line"></span>
-            `;
-    checkoutContent.appendChild(cartItem);
-  });
+  checkoutContent.innerHTML = cartList
+  .map((product) => {
+    return `
+      <div>
+        <div class="check-out-item">
+          <h3>${product.name}</h3>
+          <p>--Price: $${product.price}</p>
+          <p class="quantity">Quantity: ${product.quantity}</p>
+        </div>
+        <span class="line"></span>
+      </div>
+    `;
+  })
+  .join("");
   cartList.length = 0;
   cartContent.innerHTML = `<p class="default">Add anything you like</p>`;
   cartContent.classList.remove("show");
